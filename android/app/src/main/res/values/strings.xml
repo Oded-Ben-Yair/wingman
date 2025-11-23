@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wingman</string>
+    <string name="app_description">AI-Powered Dating Assistant</string>
+    
+    <!-- Permissions -->
+    <string name="permission_storage_title">Storage Access</string>
+    <string name="permission_storage_description">We need access to detect screenshots automatically</string>
+    <string name="permission_notifications_title">Notifications</string>
+    <string name="permission_notifications_description">Required for background screenshot detection</string>
+    <string name="permission_battery_title">Battery Optimization</string>
+    <string name="permission_battery_description">Disable battery optimization for reliable detection</string>
+    
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome to Wingman!</string>
+    <string name="onboarding_welcome_description">Your AI-powered dating assistant that helps you craft the perfect messages</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_skip">Skip</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_auto_detection">Enable Automatic Detection</string>
+    <string name="settings_auto_detection_description">Automatically detect and analyze screenshots</string>
+    <string name="settings_rerun_onboarding">Re-run Onboarding</string>
+    <string name="settings_contact_support">Contact Support</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_version">Version</string>
+    
+    <!-- Service -->
+    <string name="service_notification_title">Wingman is Active</string>
+    <string name="service_notification_description">Monitoring for screenshots</string>
+    <string name="service_channel_name">Screenshot Detection</string>
+    <string name="service_channel_description">Background service for automatic screenshot detection</string>
+    
+    <!-- Errors -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_api">Failed to get suggestions. Please try again.</string>
+</resources>
