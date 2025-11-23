@@ -117,7 +117,7 @@ fun TestScreen(
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     items(state.suggestions) { suggestion ->
-                        SuggestionCard(suggestion)
+                        TestSuggestionCard(suggestion)
                     }
                 }
             }
@@ -161,7 +161,7 @@ fun TestScreen(
 }
 
 @Composable
-fun SuggestionCard(suggestion: com.wingman.app.data.model.Suggestion) {
+fun TestSuggestionCard(suggestion: com.wingman.app.data.model.Suggestion) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)

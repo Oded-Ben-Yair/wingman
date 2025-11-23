@@ -3,6 +3,9 @@ package com.wingman.app.keyboard
 import android.inputmethodservice.InputMethodService
 import android.view.View
 import androidx.compose.ui.platform.ComposeView
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
@@ -18,10 +21,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class WingmanInputMethodService : InputMethodService(), 
     ViewModelStoreOwner,
-    SavedStateRegistryOwner {
+    SavedStateRegistryOwner,
+    LifecycleOwner {
     
-    private val viewModelStore = ViewModelStore()
+    private val _viewModelStore = ViewModelStore()
     private val savedStateRegistryController = SavedStateRegistryController.create(this)
+    private val lifecycleRegistry = LifecycleRegistry(this)
     
     private lateinit var keyboardViewModel: KeyboardViewModel
     
@@ -57,10 +62,14 @@ class WingmanInputMethodService : InputMethodService(),
     
     override fun onDestroy() {
         super.onDestroy()
-        viewModelStore.clear()
+        _viewModelStore.clear()
     }
     
-    override fun getViewModelStore(): ViewModelStore = viewModelStore
+    override val viewModelStore: ViewModelStore
+        get() = _viewModelStore
+    
+    override val lifecycle: Lifecycle
+        get() = lifecycleRegistry
     
     override val savedStateRegistry: SavedStateRegistry
         get() = savedStateRegistryController.savedStateRegistry
